@@ -9,9 +9,9 @@ defmodule PrometheusPhoenix.Mixfile do
      elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps,
-     description: description,
-     package: package,
+     deps: deps(),
+     description: description(),
+     package: package(),
      docs: [main: Prometheus.PhoenixInstrumenter,
             source_ref: "v#{@version}",
             source_url: "https://github.com/deadtrickster/prometheus-phoenix"]]
@@ -40,7 +40,7 @@ defmodule PrometheusPhoenix.Mixfile do
 
   defp deps do
     [{:prometheus_ex, "~> 1.1"},
-     {:phoenix, "~> 1.2"},    
+     {:phoenix, "~> 1.2"},
      {:ex_doc, "~> 0.11", only: :dev},
      {:earmark, ">= 0.0.0", only: :dev}]
   end
